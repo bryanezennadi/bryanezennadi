@@ -20,9 +20,6 @@ int main() {
         read(fd1, lettura, sizeof(lettura));
         printf("\033[0;35muser1: %s\033[0m\n", lettura); // user1 in viola
         
-        if (strcmp(lettura, "fine\n") == 0)
-            break;
-        
         printf("\033[0;32muser2: \033[0m"); // user2 in verde
         fgets(scrittura, MAX_MSG_SIZE, stdin);
         write(fd2, scrittura, strlen(scrittura) + 1);

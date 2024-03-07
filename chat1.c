@@ -14,13 +14,13 @@ void main(){
     fd2= open("myfifo2",O_RDONLY);
     printf("la chat si sta per aprire, scrivi 'HALT' per terminare\n");
 do{
-   printf("\033[0;35muser1: \033[0m");
+   printf("\033[0;35muser1: \033[0m"); //user1 viola
       fgets(scrittura, MAX_MSG_SIZE, stdin);
         
         write(fd1, scrittura, strlen(scrittura) + 1); 
         fprintf(file, "user1: %s\n", scrittura);
 
-        read(fd2, lettura, sizeof(lettura)); 
+        read(fd2, lettura, sizeof(lettura));  //user 2 verde
         printf("\033[0;32muser2: %s\033[0m\n", lettura); 
         fprintf(file, "user2: %s\n ", lettura);
        
